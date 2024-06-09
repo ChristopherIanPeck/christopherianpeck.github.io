@@ -3,8 +3,19 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
                 <h2 class="section-heading">Blog</h2>
-                <hr class="primary"> 
+                <hr class="primary">
+            </div>
         </div>
-
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                {% for post in site.posts %}
+                <div class="post">
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt | truncatewords: 30 }}</p>
+                    <a href="{{ post.url }}">Read more</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 </section>
